@@ -1,0 +1,36 @@
+<view class="top"></view>
+<view class="warp">
+  <view class="title">
+    <text class="yellow">餐品 . </text>详情
+  </view>
+  <view class="rows" wx:for="{{foods}}" wx:key="*this">
+    <view class="pic">
+      <van-image src="{{domain + item.photo}}" width="100rpx" height="100rpx" fit="fill" />
+    </view>
+    <view class="text">{{item.title}}</view>
+    <view class="num">* {{item.num}}</view>
+    <view class="price">¥{{item.price}}</view>
+  </view>
+  <view class="total">共计{{totalNum}}件，小计：¥{{totalPrice}}</view>
+</view>
+<view class="form">
+  <van-cell title="房间订单号" is-link value="{{orderId}}" bindtap="openOrder" />
+  <van-cell title="就餐时间" is-link value="{{eatTime}}" bindtap="openTime" />
+</view>
+<wux-date-picker visible="{{ showTime }}" value="{{eatTime}}" mode="datetime" data-index="1" data-mode="datetime"
+  bind:change="onConfirm" minDate="{{minTime}}" maxDate="{{maxTime}}" bind:cancel="onCloseTime" controlled />
+<van-action-sheet show="{{ showOrder }}" title="请选择" bind:close="onCloseOrder">
+  <block wx:for="{{orders}}" wx:key="*this">
+    <view class="order" bindtap="onSelectOrder" data-id="{{item.order_id}}" data-start="{{item.start_time}}"
+      data-end="{{item.end_time}}">
+      <view class="text">{{item.room.type.name}}</view>
+      <view class="time">{{item.start_time}} 至 {{item.end_time}}</view>
+      <van-icon name="arrow" size="20" />
+    </view>
+  </block>
+</van-action-sheet>
+<van-dialog id="van-dialog" />
+<view class="footer">
+  <view class="total_price">共计：¥{{totalPrice}}</view>
+  <view class="buy" bindtap="onBuy">马上下单</view>
+</view>

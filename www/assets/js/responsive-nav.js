@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){$("body").addClass("touch")}$.fn.slideFadeToggle=function(f,e,d){return this.animate({opacity:"toggle",height:"toggle"},f,e,d)};jQuery("#nav-button").on("click",function(){jQuery("#nav").slideFadeToggle();return false})});

@@ -1,0 +1,56 @@
+<view class="yuding">
+  <view class="row">
+    <view class="time">
+      <view class="date" bindtap="onDisplay">{{startTime}}</view>
+      <view class="week" bindtap="onDisplay">{{startWeek}}</view>
+    </view>
+    <view class="total">{{totalTime}}晚 </view>
+    <view class="time">
+      <view class="date" bindtap="onDisplay">{{endTime}}</view>
+      <view class="week" bindtap="onDisplay">{{endWeek}}</view>
+    </view>
+  </view>
+</view>
+<block wx:if="{{datas.length == 0}}">
+  <view class="noData">
+    <van-empty description="房间被预定完毕，请稍后再来！" />
+  </view>
+</block>
+<block wx:else>
+  <view class="warp">
+    <block wx:for="{{datas}}" wx:key="*this">
+      <view class="list">
+        <view class="pic" bindtap="goRoomDetails" id="{{item.room.id}}">
+          <van-image src="{{domain + item.room.photo}}" width="100%" height="355rpx" fit="fill" />
+          <view class="name">{{item.room.name}}</view>
+        </view>
+        <view class="rows">
+          <view class="left">
+            <view class="content">
+              <view class="item">{{item.room.area}}m²</view>
+              <block wx:if="{{item.room.window == 1}}">
+                <view class="item">有窗</view>
+              </block>
+              <block wx:else>
+                <view class="item">无窗</view>
+              </block>
+              <view class="item">{{item.room.bed_type}}</view>
+            </view>
+          </view>
+          <view class="price">
+            <text class="unit">均¥</text> {{item.price}} <text class="time">/晚</text>
+          </view>
+        </view>
+        <view class="footer">
+          <view class="no_room">房源紧张</view>
+          <view class="button" bindtap="goBuy" id='{{item.room.id}}'>预定</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
+<van-calendar show="{{ show }}" max-range="{{30}}" type="range" bind:close="onClose" bind:confirm="onConfirm" />
+<van-dialog use-slot title="授权提示" show="{{ showUser }}" show-cancel-button confirm-button-open-type="getUserInfo"
+  bind:close="onCloseUser" bind:confirm="getUserInfo">
+  <view style="padding:20rpx">系统需要获取你的个人信息才能进行下一步操作，不会收集和储存！</view>
+</van-dialog>

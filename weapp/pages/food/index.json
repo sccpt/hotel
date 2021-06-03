@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-stepper": "../../vant-weapp/dist/stepper/index",
+    "van-action-sheet": "../../vant-weapp/dist/action-sheet/index"
+  },
+  "navigationBarBackgroundColor": "#d5b075",
+  "navigationBarTitleText": "自助点餐中心",
+  "navigationBarTextStyle": "white"
+}

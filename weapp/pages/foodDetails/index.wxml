@@ -1,0 +1,52 @@
+<view class="banner">
+  <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" indicator-color='rgba(255,255,255,0.6)'
+    indicator-active-color='#fff'>
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item>
+        <van-image src="{{domain + item}}" width="100%" height="380rpx" fit="fill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="picNum">
+    <van-icon name="photo-o" /> {{photoNum}}张
+  </view>
+</view>
+<view class="info">
+  <view class="title">{{datas.title}}</view>
+  <view class="text">{{datas.info}}</view>
+  <view class="text" style="color:#999">销量：{{datas.sales}}</view>
+  <view class="price"><text class="unt">¥</text>{{datas.price}}</view>
+</view>
+<view class="list">
+  <view class="title">详情</view>
+  <view class="content">
+    <rich-text nodes="{{datas.content}}" />
+  </view>
+</view>
+<view class="list" style="margin-bottom:30rpx">
+  <view class="title">评价</view>
+  <view class="content">
+    <block wx:if="{{datas.eval.length == 0}}">
+      <van-empty description="暂无评价" />
+    </block>
+    <block wx:else>
+      <view class="eva" wx:for="{{datas.eval}}" wx:key="*this">
+        <view class="tit">
+          <view class="name">客人：{{item.name}}</view>
+          <view class="good">
+            <block wx:if="{{item.good == 0}}">
+              <wux-icon type="ios-sad-outline" color="#999999" size="24" />
+              <text class="gray">差评</text>
+            </block>
+            <block wx:else>
+              <wux-icon type="ios-happy-outline" color="#d5b075" size="24" />
+              <text class="text">好评</text>
+            </block>
+          </view>
+        </view>
+        <view class="cont">{{item.content}}</view>
+        <view class="cont">{{item.createdAt}}</view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-cell": "../../vant-weapp/dist/cell/index",
+    "van-radio": "../../vant-weapp/dist/radio/index",
+    "van-radio-group": "../../vant-weapp/dist/radio-group/index",
+    "van-field": "../../vant-weapp/dist/field/index"
+  },
+  "navigationBarTitleText": "我的评论"
+}

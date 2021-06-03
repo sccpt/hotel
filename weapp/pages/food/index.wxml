@@ -1,0 +1,80 @@
+<view class="warp">
+  <view class="left">
+    <block wx:if="{{active == 0}}">
+      <view class="menu active" bindtap="handleType" data-title="全部" data-active="0">全部</view>
+    </block>
+    <block wx:else>
+      <view class="menu" bindtap="handleType" data-title="全部" data-active="0">全部</view>
+    </block>
+    <block wx:for="{{types}}" wx:key="*this">
+      <block wx:if="{{active == (index + 1)}}">
+        <view class="menu active" bindtap="handleType" data-title="{{item.title}}" data-active="{{index + 1}}"
+          data-id="{{item.id}}">
+          {{item.title}}</view>
+      </block>
+      <block wx:else>
+        <view class="menu" bindtap="handleType" data-title="{{item.title}}" data-active="{{index + 1}}"
+          data-id="{{item.id}}">{{item.title}}
+        </view>
+      </block>
+    </block>
+  </view>
+  <view class="right">
+    <view class="title">— {{title}} —</view>
+    <block wx:if="{{list.length == 0}}">
+      <van-empty description="暂无相关数据" />
+    </block>
+    <block wx:else>
+      <view class="list" wx:for="{{list}}" wx:key="id">
+        <view class="pic" data-id="{{item.id}}" bindtap="goDetails">
+          <van-image src="{{domain + item.photo}}" width="158rpx" height="158rpx" fit="fill" />
+        </view>
+        <view class="content">
+          <view class="text" data-id="{{item.id}}" bindtap="goDetails">{{item.title}}</view>
+          <view class="info" data-id="{{item.id}}" bindtap="goDetails">{{item.info}}</view>
+          <view class="bot">
+            <view class="price">¥{{item.price}}</view>
+            <view class="buy" bindtap="handleBuy" data-id="{{item.id}}" data-photo="{{domain + item.photo}}"
+              data-title="{{item.title}}" data-price="{{item.price}}">
+              <van-icon name="plus" class="ico" size="22rpx" color="#ffffff" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="footer">
+  <view class="total" bindtap="onShowCar">
+    <view class="car">
+      <van-icon name="shopping-cart-o" color="#fff" size="70rpx" />
+      <view class="num">{{num}}</view>
+    </view>
+    <view class="price">
+      <text class="unt">¥</text> {{total}}
+    </view>
+  </view>
+  <view class="ok" bindtap="gobuy">选好了</view>
+</view>
+<van-action-sheet show="{{ show }}" title="已选商品" bind:close="onClose">
+  <view class="carList">
+    <block wx:if="{{carList2.length == 0}}">
+      <van-empty description="购物车空空如也" />
+    </block>
+    <block wx:else>
+      <view class="rows" wx:for="{{carList2}}" wx:key="*this">
+        <view class="pic">
+          <van-image src="{{item.photo}}" width="124rpx" height="124rpx" fit="fill" />
+        </view>
+        <view class="content">
+          <view class="text">{{item.title}}</view>
+          <view class="bot">
+            <view class="price">¥{{item.price}}</view>
+            <van-stepper value="{{item.num}}" data-id="{{item.id}}" data-num="{{item.num}}" min="0"
+              bind:change="onChange" disable-input="{{true}}" />
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</van-action-sheet>

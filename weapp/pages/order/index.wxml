@@ -1,0 +1,188 @@
+<van-tabs active="{{ active }}" swipeable animated title-active-color='#ad5c00' nav-class='tabs'>
+  <van-tab title="全部">
+    <block wx:if="{{all.length == 0}}">
+      <view class="noData">
+        <van-empty description="暂无订单信息" />
+      </view>
+    </block>
+    <block wx:else>
+      <view class="warp">
+        <block wx:for="{{all}}" wx:key="*this">
+          <view class="list">
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="title">{{item.room.type.name}}</view>
+              <block wx:if="{{item.status == 2 && item.pay_status == 0}}">
+                <view class="status noPay">待支付</view>
+              </block>
+              <block wx:elif="{{item.status == 2 && item.pay_status == 1}}">
+                <view class="status noPay">待入住</view>
+              </block>
+              <block wx:elif="{{item.status == 3}}">
+                <view class="status end">已取消</view>
+              </block>
+              <block wx:else>
+                <view class="status end">已完成</view>
+              </block>
+            </view>
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="pic">
+                <van-image src="{{domain + item.room.type.photo}}" width="180rpx" height="120rpx" fit="fill" />
+              </view>
+              <view class="content">
+                <view class="item">{{item.start_time}} 至 {{item.end_time}}</view>
+                <block wx:if="{{item.status == 2 && item.pay_status == 0}}">
+                  <view class="item">
+                    <block wx:if="{{item.pay_time}}">
+                      <text class="pay_time">剩余支付时间：</text>
+                      <van-count-down time="{{item.pay_time}}" format="mm 分 ss 秒" />
+                    </block>
+                    <block wx:else>
+                      <text class="pay_time">请尽快支付</text>
+                    </block>
+                  </view>
+                </block>
+              </view>
+              <view class="monen">¥{{item.price}}</view>
+            </view>
+            <view class="seting">
+              <block wx:if="{{item.status == 2 && item.pay_status == 0}}">
+                <view class="button pay">去支付</view>
+                <view class="button" bindtap="onCancel" data-time="{{item.start_time}}" data-pay="{{item.pay_status}}"
+                  data-id="{{item.id}}" data-room="{{item.room.name}}">取消订单</view>
+              </block>
+              <block wx:elif="{{item.status == 2 && item.pay_status == 1}}">
+                <view class="button" bindtap="onCancel" data-time="{{item.start_time}}" data-pay="{{item.pay_status}}"
+                  data-id="{{item.id}}" data-room="{{item.room.name}}">取消订单</view>
+              </block>
+              <block wx:else>
+                <view class="button" bindtap="goHome">再次预定</view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="待支付">
+    <block wx:if="{{pay.length == 0}}">
+      <view class="noData">
+        <van-empty description="暂无订单信息" />
+      </view>
+    </block>
+    <block wx:else>
+      <view class="warp">
+        <block wx:for="{{pay}}" wx:key="*this">
+          <view class="list">
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="title">{{item.room.type.name}}</view>
+              <block>
+                <view class="status noPay">待支付</view>
+              </block>
+            </view>
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="pic">
+                <van-image src="{{domain + item.room.type.photo}}" width="180rpx" height="120rpx" fit="fill" />
+              </view>
+              <view class="content">
+                <view class="item">{{item.start_time}} 至 {{item.end_time}}</view>
+                <block>
+                  <view class="item">
+                    <block wx:if="{{item.pay_time}}">
+                      <text class="pay_time">剩余支付时间：</text>
+                      <van-count-down time="{{item.pay_time}}" format="mm 分 ss 秒" />
+                    </block>
+                    <block wx:else>
+                      <text class="pay_time">请尽快支付</text>
+                    </block>
+                  </view>
+                </block>
+              </view>
+              <view class="monen">¥{{item.price}}</view>
+            </view>
+            <view class="seting">
+              <block>
+                <view class="button pay">去支付</view>
+                <view class="button" bindtap="onCancel" data-time="{{item.start_time}}" data-pay="{{item.pay_status}}"
+                  data-id="{{item.id}}" data-room="{{item.room.name}}">取消订单</view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="待入住">
+    <block wx:if="{{check.length == 0}}">
+      <view class="noData">
+        <van-empty description="暂无订单信息" />
+      </view>
+    </block>
+    <block wx:else>
+      <view class="warp">
+        <block wx:for="{{check}}" wx:key="*this">
+          <view class="list">
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="title">{{item.room.type.name}}</view>
+              <block>
+                <view class="status noPay">待入住</view>
+              </block>
+            </view>
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="pic">
+                <van-image src="{{domain + item.room.type.photo}}" width="180rpx" height="120rpx" fit="fill" />
+              </view>
+              <view class="content">
+                <view class="item">{{item.start_time}} 至 {{item.end_time}}</view>
+              </view>
+              <view class="monen">¥{{item.price}}</view>
+            </view>
+            <view class="seting">
+              <block>
+                <view class="button" bindtap="goHome">再次预定</view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="已完成">
+    <block wx:if="{{finish.length == 0}}">
+      <view class="noData">
+        <van-empty description="暂无订单信息" />
+      </view>
+    </block>
+    <block wx:else>
+      <view class="warp">
+        <block wx:for="{{finish}}" wx:key="*this">
+          <view class="list">
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="title">{{item.room.type.name}}</view>
+              <block wx:if="{{item.status == 4}}">
+                <view class="status end">已完成</view>
+              </block>
+              <block wx:else>
+                <view class="status end">已取消</view>
+              </block>
+            </view>
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="pic">
+                <van-image src="{{domain + item.room.type.photo}}" width="180rpx" height="120rpx" fit="fill" />
+              </view>
+              <view class="content">
+                <view class="item">{{item.start_time}} 至 {{item.end_time}}</view>
+              </view>
+              <view class="monen">¥{{item.price}}</view>
+            </view>
+            <view class="seting">
+              <block>
+                <view class="button" bindtap="goHome">再次预定</view>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </van-tab>
+</van-tabs>
+<van-dialog id="van-dialog" />

@@ -1,0 +1,107 @@
+page {
+  background: #f1f1f2;
+}
+
+.warp {
+  padding-top: 80rpx;
+}
+
+.noData {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  margin: 30rpx;
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.list .row {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.list .title {
+  flex: 1;
+}
+
+.list .title,
+.list .status {
+  font-size: 34rpx;
+}
+
+.list .noPay {
+  color: #ad6000;
+}
+
+.list .end {
+  color: #999;
+}
+
+.list .pic {
+  width: 180rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.list .content {
+  flex: 1;
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+
+.van-tabs__wrap {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+}
+
+.list .content .item {
+  line-height: 40rpx;
+}
+
+.list .pay_time {
+  background: #feecc9;
+  color: #b77621;
+}
+
+.list .monen {
+  margin-top: 82rpx;
+  font-size: 32rpx;
+}
+
+.list .seting {
+  width: 100%;
+  margin-top: 34rpx;
+  border-top: 1px solid #f1f1f1;
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.list .button {
+  width: 160rpx;
+  height: 50rpx;
+  border-radius: 10rpx;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  margin-left: 28rpx;
+  text-align: center;
+  border: 1rpx solid #e7e7e7;
+}
+
+.list .pay {
+  background: #cfa765;
+  border: 0;
+  color: #fff;
+}

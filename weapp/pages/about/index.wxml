@@ -1,0 +1,17 @@
+<view class="list">
+  <view class="title">酒店管理系统</view>
+  <view class="subTit">四川省成都市金牛区树大路</view>
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" class="map">
+  </map>
+</view>
+<view class="list">
+  <view class="title">联系酒店</view>
+  <van-divider />
+  <rich-text class="content" nodes="{{datas.contact.content}}"></rich-text>
+</view>
+<view class="list" style="margin-bottom:130rpx;">
+  <view class="title">酒店介绍</view>
+  <van-divider />
+  <rich-text class="content" nodes="{{datas.about.content}}"></rich-text>
+</view>
+<tabbar active="3" />

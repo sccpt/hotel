@@ -1,0 +1,53 @@
+<!-- start header -->
+<header class="clearfix">
+    <div id="logo"><a href="/">酒店管理系统</a></div>
+    <div id="nav-button"><span class="nav-bar"></span><span class="nav-bar"></span><span class="nav-bar"></span>
+    </div>
+    <nav>
+        <ul id="nav">
+            {% if title == '首页' %}
+            <li class="active"><a href="/">首页</a></li>
+            {% else %}
+            <li><a href="/">首页</a></li>
+            {% endif %}
+
+            {% if typeName == 'room' %}
+            <li class="active"><a href="/room/list/1.html">房型列表</a></li>
+            {% else %}
+            <li><a href="/room/list/1.html">房型列表</a></li>
+            {% endif %}
+
+            {% if title == '客房预定' %}
+            <li class="active"><a href="/hotel/details/13.html">客房预定</a></li>
+            {% else %}
+            <li><a href="/hotel/details/13.html">客房预定</a></li>
+            {% endif %}
+
+            {% if typeName == 'food' %}
+            <li class="active"><a href="/food/list/1.html">美食商品</a></li>
+            {% else %}
+            <li><a href="/food/list/1.html">美食商品</a></li>
+            {% endif %}
+
+            {% if title == '关于我们' %}
+            <li class="active"><a href="/hotel/details/9.html">关于我们</a></li>
+            {% else %}
+            <li><a href="/hotel/details/9.html">关于我们</a></li>
+            {% endif %}
+
+            {% if title == '联系我们' %}
+            <li class="active"><a href="/hotel/details/10.html">联系我们</a></li>
+            {% else %}
+            <li><a href="/hotel/details/10.html">联系我们</a></li>
+            {% endif %}
+
+            {% if typeName == 'news' %}
+            <li class="active"><a href="/news/list/1.html"><i class="fa fa-bed"></i>促销动态</a></li>
+            {% else %}
+            <li><a href="/news/list/1.html"><i class="fa fa-bed"></i>促销动态</a></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+</header>
+<!-- end header -->

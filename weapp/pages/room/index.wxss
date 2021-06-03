@@ -1,0 +1,172 @@
+page {
+  background: #f1f1f2;
+}
+
+.yuding {
+  width: 100%;
+  padding: 20rpx;
+  background: #fff;
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.yuding .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yuding .time {
+  flex: 1;
+  text-align: center;
+  padding-top: 10rpx;
+}
+
+.yuding .date {
+  font-size: 38rpx;
+  font-weight: bold;
+}
+
+.yuding .week {
+  font-size: 32rpx;
+  color: #ccc;
+  margin-top: 20rpx;
+}
+
+.yuding .total {
+  width: 140px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  color: #ac5c01;
+  font-size: 34rpx;
+}
+
+.yuding .button {
+  width: 100%;
+  height: 92rpx;
+  border-radius: 10rpx;
+  background: #d9b778;
+  line-height: 92rpx;
+  text-align: center;
+  font-size: 38rpx;
+  color: #fff;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.warp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 158rpx;
+  padding-bottom: 30rpx;
+}
+
+.list {
+  width: calc(100% - 60rpx);
+  margin-top: 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.list .pic {
+  width: 100%;
+  height: 355rpx;
+  position: relative;
+}
+
+.list .name {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 28rpx;
+  z-index: 66;
+  overflow: hidden;
+  color: #fff;
+  font-size: 38rpx;
+  text-indent: 20rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 0 0 10rpx #000;
+}
+
+.list .rows {
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list .left {
+  flex: 1;
+  font-size: 32rpx;
+}
+
+.list .content {
+  width: 100%;
+  display: flex;
+}
+
+.list .content .item {
+  margin-right: 20rpx;
+}
+
+.list .no_room {
+  flex: 1;
+  color: #c89544;
+  font-size: 32rpx;
+  padding-left: 20rpx;
+}
+
+.list .price {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #b00000;
+}
+
+.list .unit,
+.list .time {
+  font-size: 22rpx;
+  font-weight: normal;
+}
+
+.list .time {
+  color: #999;
+}
+
+.list .footer {
+  width: 100%;
+  background: #fafafa;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.list .button {
+  width: 124rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  margin-right: 20rpx;
+  background: linear-gradient(to right, #d0a461, #ddba7f);
+}
+
+.noData {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

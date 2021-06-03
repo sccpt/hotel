@@ -1,0 +1,22 @@
+/**app.wxss**/
+.container {
+  width: 100%;
+  overflow: hidden;
+  background: #f1f1f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 130rpx;
+}
+
+.loading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  font-size: 26rpx;
+  color: #999;
+}

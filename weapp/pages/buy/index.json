@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "订单填写",
+  "usingComponents": {
+    "van-divider": "../../vant-weapp/dist/divider/index",
+    "van-cell": "../../vant-weapp/dist/cell/index",
+    "van-cell-group": "../../vant-weapp/dist/cell-group/index",
+    "van-stepper": "../../vant-weapp/dist/stepper/index",
+    "van-field": "../../vant-weapp/dist/field/index",
+    "van-popup": "../../vant-weapp/dist/popup/index",
+    "van-loading": "../../vant-weapp/dist/loading/index"
+  }
+}

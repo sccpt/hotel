@@ -1,0 +1,14 @@
+<view class="warp" wx:for="{{datas}}" wx:key="*this">
+  <view class="rows">
+    <view class="pic">
+      <van-image src="{{domain + item.food.photo}}" width="100rpx" height="100rpx" fit="fill" />
+    </view>
+    <view class="text">{{item.food.title}}</view>
+    <view class="price">
+      <block wx:if="{{item.good == 1}}">好评</block>
+      <block wx:else>差评</block>
+    </view>
+  </view>
+  <view class="evalCont">{{item.content}}</view>
+  <view class="evalCont">{{item.createdAt}}</view>
+</view>

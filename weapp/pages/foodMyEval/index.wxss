@@ -1,0 +1,178 @@
+page {
+  background: #f1f1f2;
+}
+
+.list {
+  margin: 30rpx;
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.list .title {
+  padding-top: 20rpx;
+  font-size: 32rpx;
+}
+
+.list .content {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 20rpx;
+  line-height: 36rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.header {
+  height: 260rpx;
+  padding-left: 52rpx;
+  line-height: 120rpx;
+  font-size: 40rpx;
+  color: #fff;
+  z-index: 1;
+  background: linear-gradient(to right, #cea461, #dbbb7f);
+}
+
+.info {
+  margin: 30rpx;
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  margin-top: -80rpx;
+  z-index: 10;
+}
+
+.info .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.info .price {
+  flex: 1;
+  font-size: 32rpx;
+}
+
+.info .price .un,
+.info .price .text {
+  font-size: 36rpx;
+  color: #cb1b1b;
+}
+
+.info .price .un {
+  font-size: 32rpx;
+}
+
+.info .button {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 2px solid #eaeaea;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 32rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.warp {
+  margin: 30rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  z-index: 2;
+}
+
+.warp .title {
+  height: 100rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.warp .title .yellow {
+  color: #d5b075;
+}
+
+.rows {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36rpx;
+}
+
+.rows .pic {
+  width: 100rpx;
+  height: 100rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.rows .text {
+  flex: 1;
+  margin-left: 22rpx;
+  font-size: 30rpx;
+}
+
+.rows .num {
+  font-size: 30rpx;
+  margin-right: 40rpx;
+}
+
+.rows .pirce {
+  font-size: 30rpx;
+}
+
+.total {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 20rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: right;
+}
+
+.eval {
+  min-height: 150rpx;
+  margin-top: 30rpx;
+}
+
+
+.footer {
+  width: 100%;
+  height: 130rpx;
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  padding-top: 30rpx;
+  left: 0;
+  bottom: 0;
+  z-index: 66;
+}
+
+.footer .button {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 38rpx;
+  background: linear-gradient(to right, #cfa561, #dbbb7e);
+}
+
+.blank {
+  width: 100%;
+  height: 160rpx;
+}
+
+.evalCont {
+  width: 100%;
+  overflow: hidden;
+  line-height: 200%;
+  font-size: 30rpx;
+  padding-top: 20rpx;
+}

@@ -1,0 +1,28 @@
+<view class="header">
+  <van-image class="pic" round fit='cover' width="120rpx" height="120rpx" src="{{avatarUrl}}" />
+  <view class="name" bindtap="onLogin">{{nickName}}</view>
+</view>
+<view class="total">
+  <view class="item">
+    <view class="text1">订房订单数</view>
+    <view class="text2">{{roomOrderNum}}</view>
+  </view>
+  <view class="item">
+    <view class="text1">订餐订单数</view>
+    <view class="text2">{{foodOrderNum}}</view>
+  </view>
+</view>
+<view class="bigTit">我的订单</view>
+<view class="warp">
+  <van-cell is-link icon="hotel-o" title="订房订单" link-type="navigateTo" bindtap="goList" id="0" />
+  <van-cell is-link icon="points" title="订餐订单" link-type="navigateTo" bindtap="goFood" />
+</view>
+<view class="bigTit" style="margin-top:30rpx">我的评价</view>
+<view class="warp">
+  <van-cell is-link icon="comment-o" title="我的评价" link-type="navigateTo" bindtap="goEval" />
+</view>
+<tabbar active="4" />
+<van-dialog use-slot title="授权提示" show="{{ showUser }}" show-cancel-button confirm-button-open-type="getUserProfile"
+  bind:close="onCloseUser" bind:confirm="getUserProfile">
+  <view style="padding:20rpx">系统需要获取你的个人信息来完善会员资料，不会收集和储存！</view>
+</van-dialog>

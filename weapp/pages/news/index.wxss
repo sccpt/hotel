@@ -1,0 +1,58 @@
+.top {
+  width: 100%;
+  border-bottom: #e2e2e2 1px solid;
+}
+
+.top .pic {
+  width: 100%;
+  height: 300rpx;
+}
+
+.top .title {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  font-size: 32rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.top .time {
+  font-size: 26rpx;
+  color: #999;
+  padding-bottom: 20rpx;
+  padding-left: 30rpx;
+}
+
+.list {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: #e2e2e2 1px solid;
+  display: flex;
+  align-items: center;
+}
+
+.list .left {
+  flex: 1;
+  padding-left: 30rpx;
+}
+
+.list .title {
+  font-size: 32rpx;
+}
+
+.list .time {
+  padding-top: 20rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.list .pic {
+  width: 175rpx;
+  height: 120rpx;
+  margin-right: 30rpx;
+  margin-left: 20rpx;
+}
+
+.warp {
+  padding-bottom: 120rpx;
+}

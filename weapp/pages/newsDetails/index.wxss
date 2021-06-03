@@ -1,0 +1,21 @@
+.warp {
+  padding: 30rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  line-height: 40rpx;
+  font-weight: bold;
+}
+
+.time {
+  font-size: 26rpx;
+  color: #999;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}
+
+.content {
+  padding-top: 20rpx;
+  line-height: 38rpx;
+}
