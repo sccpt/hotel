@@ -38,7 +38,8 @@ Redis
 ## 使用
 
 ```bash
-git clone https://github.com/sccpt/hotel.git
+git clone https://gitee.com/scyurui/hotel.git
+// 或者 git clone https://github.com/sccpt/hotel.git
 cd hotel
 npm install
 ```
