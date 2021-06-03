@@ -1,0 +1,63 @@
+{% extends "./page.html" %}
+{% block content %}
+{% include "./public/banner.html" %}
+<div class="uk-padding uk-padding-remove-horizontal">
+    <div class="uk-container">
+        <div data-uk-grid="" class="uk-grid">
+            <!-- ARTICLES LIST -->
+            <div
+                class="uk-width-2-3@xl uk-width-2-3@l uk-width-2-3@m uk-width-1-1@s uk-margin-top impx-margin-top-small uk-first-column">
+                {% for rowsItem in rows %}
+                <div class="uk-card uk-card-default uk-margin-medium-bottom impx-article">
+                    <!-- article #1 -->
+                    <div class="uk-card-body impx-padding-medium">
+                        <article class="uk-article impx-article-item">
+                            <h3 class="uk-article-title"><a class="uk-link-reset"
+                                    href="{{rowsItem.url}}">{{rowsItem.subTitle}}</a></h3>
+                            <p class="uk-article-meta uk-margin-remove-top"><i
+                                    class="fa fa-user"></i>{{rowsItem.createdBy}} | <i
+                                    class="fa fa-calendar"></i>{{rowsItem.createdAt}}</p><img src="{{rowsItem.photo}}"
+                                class="uk-margin-small-bottom" alt="">
+                            <p class="uk-dropcap">{{rowsItem.content}} <a
+                                    class="uk-button uk-button-text impx-text-aqua" href="{{rowsItem.url}}">查看详情 »</a>
+                            </p>
+                        </article>
+                    </div>
+                </div><!-- article #1 end -->
+                {% endfor %}
+                <!-- blog paging -->
+                <ul class="uk-pagination uk-flex-center impx-pagination" data-uk-margin="">
+                    {% for pageItem in pages %}
+                    {% if loop.first %}
+                    <li class="uk-first-column">
+                        <a href="{{pageItem.url}}"><span data-uk-pagination-previous=""
+                                class="uk-pagination-previous uk-icon"><svg width="7" height="12" viewBox="0 0 7 12"
+                                    xmlns="http://www.w3.org/2000/svg" data-svg="pagination-previous">
+                                    <polyline fill="none" stroke="#000" stroke-width="1.2" points="6 1 1 6 6 11">
+                                    </polyline>
+                                </svg></span></a>
+                    </li>
+                    {% elif loop.last %}
+                    <li><a href="{{pageItem.url}}"><span data-uk-pagination-next=""
+                                class="uk-pagination-next uk-icon"><svg width="7" height="12" viewBox="0 0 7 12"
+                                    xmlns="http://www.w3.org/2000/svg" data-svg="pagination-next">
+                                    <polyline fill="none" stroke="#000" stroke-width="1.2" points="1 1 6 6 1 11">
+                                    </polyline>
+                                </svg></span></a></li>
+
+                    {% elif pageItem.active %}
+                    <li class="uk-active"><span>{{pageItem.num}}</span></li>
+                    {% else %}
+                    <li><a href="{{pageItem.url}}">{{pageItem.num}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul><!-- blog paging end -->
+            </div><!-- ARTICLES LIST -->
+            <!-- SIDEBAR -->
+            <div class="uk-width-1-3@xl uk-width-1-3@l uk-width-1-3@m uk-width-1-1@s  uk-margin-top">
+                {% include "./public/right_cont.html" %}
+            </div><!-- SIDEBAR -->
+        </div>
+    </div>
+</div>
+{% endblock %}

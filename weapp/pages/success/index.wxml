@@ -1,0 +1,17 @@
+<view>
+  <view class="notice">
+    <van-icon name="checked" size="60" color="#d5b075" />
+    <text class="text">订餐成功</text>
+  </view>
+  <view class="info">订单号：{{orderId}}</view>
+  <view class="info">就餐时间：{{eatTime}}</view>
+  <view class="info">总金额：¥{{price}}</view>
+  <view class="btn">
+    <view class="btn_blue" bindtap="goHome">返回首页</view>
+    <view class="btn_yellow" bindtap="goDetails">订单详情</view>
+  </view>
+  <view class="cont">
+    <view class="title">订餐说明</view>
+    <view class="text">订餐成功后，相关款项是与订房订单绑定。退房的时候，请到酒店服务台支付相关费用！</view>
+  </view>
+</view>

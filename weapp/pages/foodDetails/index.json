@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wux-icon": "../../wux/icon/index"
+  },
+  "navigationBarTitleText": "美食详情"
+}

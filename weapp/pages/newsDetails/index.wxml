@@ -1,0 +1,7 @@
+<view class="warp">
+  <view class="title">{{datas.title}}</view>
+  <view class="time">{{datas.createdAt}}</view>
+  <view class="content">
+    <rich-text nodes="{{datas.content}}" />
+  </view>
+</view>

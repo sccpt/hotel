@@ -1,0 +1,124 @@
+{% extends "./default.html" %}
+{% block content %}
+<section class="section white-bg" id="section2">
+    <div class="container clearfix">
+        <div class="nautical-1"></div>
+        <div class="col-lg-12 centered header-wrapper">
+            <h2>推荐房型</h2>
+            <p class="large">舒适与优雅融为一体，为我们的客人提供住宿，在与众不同的美好环境中脱颖而出的特点就是其特色。</p>
+        </div>
+        {% for roomItem in rooms %}
+        <div class="col-lg-6 col-md-6 with-bg">
+            <div class="margin-wrapper"><a class="simple-ajax-popup" href="/room/details/{{roomItem.id}}.html"
+                    data-title="Project Title Here"><img alt="" src="{{roomItem.photo}}" />
+                    <div class="covering-image centered">
+                        <div class="info-box-content">
+                            <div class="parent">
+                                <div class="child">
+                                    <h3 class="header">{{roomItem.name}}</h3>
+                                    <p><i>两人的浪漫之旅</i></p>
+                                    <div class="left-side">
+                                        <p class="small"><i class="fa fa-bus"></i><i class="fa fa-hotel"></i><i
+                                                class="fa fa-cutlery"></i></p>
+                                    </div>
+                                    <div class="right-side">
+                                        <p class="small">￥{{roomItem.price}}/晚</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a></div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<section id="blog" class="blog_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 aos-init" data-aos="fade-up">
+                <div class="section-title text-center">
+                    <h2>促销动态</h2>
+                </div>
+            </div><!-- END COL -->
+        </div><!-- END ROW -->
+        <div class="row aos-init" data-aos="fade-up">
+            {% for newsItem in news %}
+            <div class="col-lg-4 col-md-6">
+                <div class="single_blog">
+                    <div class="blog_image"><img class="blog-photo" alt="Blog Photo" src="{{newsItem.photo}}">
+                    </div>
+                    <div class="blog-text">
+                        <div class="post-meta"><span class="float-left"><i
+                                    class="fa fa-clock-o"></i>{{newsItem.createdAt}}</span><span class="float-right"><i
+                                    class="fa fa-user"></i><a href="javascript:void" class="comments-link">{{newsItem.
+                                    createdBy}}</a></span></div>
+                        <h4><a href="/news/details/{{newsItem.id}}.html"
+                                title="{{newsItem.title}}">{{newsItem.subTitle}}</a>
+                        </h4>
+                        <p>{{newsItem.content}}</p><a href="/news/details/{{newsItem.id}}.html" class="post-btn">查看详情 <i
+                                class="icofont-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!--- END ROW -->
+    </div>
+    <!--- END CONTAINER -->
+</section>
+<section id="gallery" class="our_gallery section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" data-aos="fade-up">
+                <div class="section-title text-center">
+                    <h2>照片图库</h2>
+                </div>
+            </div><!-- END COL -->
+        </div><!-- END ROW -->
+        <div class="portfolio-grid">
+            <div class="row">
+                {% for photoItem in photo %}
+                <div class="col-lg-4 col-md-6 col-12 portfolio-item">
+                    <div class="single-gallery"><img src="{{photoItem.photo}}" alt="gallery Image">
+                        <a href="{{photoItem.photo}}" class="gallery_enlarge_icon"><i class="fa fa-search-plus"></i></a>
+                        <h4>{{photoItem.subTitle}}</h4>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div><!-- END portfolio-grid -->
+    </div>
+    <div class="container mt-20">
+        <div class="row">
+            <div class="col-12 text-center"><a href="/photo/list/1.html" class="gallery-btn">更多照片 <i
+                        class="icofont-long-arrow-right"></i></a></div>
+        </div>
+    </div>
+</section>
+<section class="section" id="section5">
+    <div id="ancor5"></div>
+    <div class="container clearfix">
+        <div class="nautical-5"></div>
+        <div class="col-lg-12 centered header-wrapper">
+            <h2>美食商品</h2>
+        </div>
+        {% for foodItem in food %}
+        <div class="col-lg-4 col-md-4"><img alt="{{foodItem.title}}" src="{{foodItem.photo}}" />
+            <figure class="price-table">
+                <div class="heading">
+                    <h4>{{foodItem.subTitle}}</h4>
+                </div>
+                <p class="price-details">
+                    <span>{{foodItem.content}}</span>
+                    <a href="/food/details/{{foodItem.id}}.html" class="button full-color">
+                        查看详情
+                    </a>
+                </p>
+            </figure>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% include "./public/contact.html" %}
+{% endblock %}

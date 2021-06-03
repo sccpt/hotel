@@ -1,0 +1,7 @@
+<van-tabbar z-index="99" active="{{ active }}" active-color="#c29139" inactive-color="#000" bind:change="onChange">
+  <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+  <van-tabbar-item icon="fire-o">促销</van-tabbar-item>
+  <van-tabbar-item icon="shop-o">订餐</van-tabbar-item>
+  <van-tabbar-item icon="hotel-o">关于</van-tabbar-item>
+  <van-tabbar-item icon="user-o">我的</van-tabbar-item>
+</van-tabbar>

@@ -1,0 +1,159 @@
+<van-tabs active="{{ active }}" swipeable animated title-active-color='#ad5c00' nav-class='tabs'>
+  <van-tab title="全部">
+    <block wx:if="{{all.length == 0}}">
+      <view class="noData">
+        <van-empty description="暂无订单信息" />
+      </view>
+    </block>
+    <block wx:else>
+      <view class="warp">
+        <block wx:for="{{all}}" wx:key="*this">
+          <view class="list">
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="title">就餐时间：{{item.eat_time}}</view>
+              <block wx:if="{{item.status == 0}}">
+                <view class="status noPay">已订餐</view>
+              </block>
+              <block wx:elif="{{item.status == 1}}">
+                <view class="status noPay">备餐中</view>
+              </block>
+              <block wx:elif="{{item.status == 2}}">
+                <view class="status end">已完成</view>
+              </block>
+              <block wx:else>
+                <view class="status end">取消订单</view>
+              </block>
+            </view>
+            <view class="seting">
+              <block wx:if="{{item.eva_status == 0 && item.status == 2}}">
+                <view class="button pay" id="{{item.id}}" bindtap="goEval">待评价</view>
+              </block>
+              <block wx:if="{{item.status == 0 && nowTime < item.eat_time}}">
+                <view class="button" bindtap="onCancel" id="{{item.id}}">取消订单</view>
+              </block>
+              <view class="button" bindtap="goDetails" id="{{item.id}}">订单详情</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="已订餐">
+    <block wx:if="{{pay.length == 0}}">
+      <view class="noData">
+        <van-empty description="暂无订单信息" />
+      </view>
+    </block>
+    <block wx:else>
+      <view class="warp">
+        <block wx:for="{{pay}}" wx:key="*this">
+          <view class="list">
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="title">就餐时间：{{item.eat_time}}</view>
+              <block wx:if="{{item.status == 0}}">
+                <view class="status noPay">已订餐</view>
+              </block>
+              <block wx:elif="{{item.status == 1}}">
+                <view class="status noPay">备餐中</view>
+              </block>
+              <block wx:elif="{{item.status == 2}}">
+                <view class="status end">已完成</view>
+              </block>
+              <block wx:else>
+                <view class="status end">取消订单</view>
+              </block>
+            </view>
+            <view class="seting">
+              <block wx:if="{{item.eva_status == 0 && item.status == 2}}">
+                <view class="button pay" id="{{item.id}}" bindtap="goEval">待评价</view>
+              </block>
+              <block wx:if="{{item.status == 0 && nowTime < item.eat_time}}">
+                <view class="button" bindtap="onCancel" id="{{item.id}}">取消订单</view>
+              </block>
+              <view class="button" bindtap="goDetails" id="{{item.id}}">订单详情</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="备餐中">
+    <block wx:if="{{check.length == 0}}">
+      <view class="noData">
+        <van-empty description="暂无订单信息" />
+      </view>
+    </block>
+    <block wx:else>
+      <view class="warp">
+        <block wx:for="{{check}}" wx:key="*this">
+          <view class="list">
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="title">就餐时间：{{item.eat_time}}</view>
+              <block wx:if="{{item.status == 0}}">
+                <view class="status noPay">已订餐</view>
+              </block>
+              <block wx:elif="{{item.status == 1}}">
+                <view class="status noPay">备餐中</view>
+              </block>
+              <block wx:elif="{{item.status == 2}}">
+                <view class="status end">已完成</view>
+              </block>
+              <block wx:else>
+                <view class="status end">取消订单</view>
+              </block>
+            </view>
+            <view class="seting">
+              <block wx:if="{{item.eva_status == 0 && item.status == 2}}">
+                <view class="button pay" id="{{item.id}}" bindtap="goEval">待评价</view>
+              </block>
+              <block wx:if="{{item.status == 0 && nowTime < item.eat_time}}">
+                <view class="button" bindtap="onCancel" id="{{item.id}}">取消订单</view>
+              </block>
+              <view class="button" bindtap="goDetails" id="{{item.id}}">订单详情</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="已完成">
+    <block wx:if="{{finish.length == 0}}">
+      <view class="noData">
+        <van-empty description="暂无订单信息" />
+      </view>
+    </block>
+    <block wx:else>
+      <view class="warp">
+        <block wx:for="{{finish}}" wx:key="*this">
+          <view class="list">
+            <view class="row" bindtap="goDetails" id="{{item.id}}">
+              <view class="title">就餐时间：{{item.eat_time}}</view>
+              <block wx:if="{{item.status == 0}}">
+                <view class="status noPay">已订餐</view>
+              </block>
+              <block wx:elif="{{item.status == 1}}">
+                <view class="status noPay">备餐中</view>
+              </block>
+              <block wx:elif="{{item.status == 2}}">
+                <view class="status end">已完成</view>
+              </block>
+              <block wx:else>
+                <view class="status end">取消订单</view>
+              </block>
+            </view>
+            <view class="seting">
+              <block wx:if="{{item.eva_status == 0 && item.status == 2}}">
+                <view class="button pay" id="{{item.id}}" bindtap="goEval">待评价</view>
+              </block>
+              <block wx:if="{{item.status == 0 && nowTime < item.eat_time}}">
+                <view class="button" bindtap="onCancel" id="{{item.id}}">取消订单</view>
+              </block>
+              <view class="button" bindtap="goDetails" id="{{item.id}}">订单详情</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </van-tab>
+</van-tabs>
+<van-dialog id="van-dialog" />

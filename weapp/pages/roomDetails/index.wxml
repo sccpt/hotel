@@ -1,0 +1,66 @@
+<view class="banner">
+  <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" indicator-color='rgba(255,255,255,0.6)'
+    indicator-active-color='#fff'>
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item>
+        <van-image src="{{domain + item}}" width="100%" height="380rpx" fit="fill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="picNum">
+    <van-icon name="photo-o" /> {{photoNum}}张
+  </view>
+</view>
+<view class="info">
+  <view class="title">{{datas.name}}</view>
+  <view class="content">
+    <view class="item">面积：{{datas.area}}m²</view>
+    <block wx:if="{{datas.window == 1}}">
+      <view class="item">窗户：有窗</view>
+    </block>
+    <block wx:else>
+      <view class="item">窗户：无窗</view>
+    </block>
+    <view class="item">wifi：{{datas.wifi}}</view>
+    <view class="item">楼层：{{datas.floor}}</view>
+    <view class="item">可住：{{datas.people_num}}人</view>
+    <view class="item">吸烟：{{datas.smoking}}</view>
+    <view class="item">床型：{{datas.bed_type}}</view>
+    <view class="item">餐食：{{datas.meals}}</view>
+  </view>
+</view>
+<view class="list">
+  <view class="title">便利设施</view>
+  <view class="content">{{datas.support}}</view>
+</view>
+<view class="list">
+  <view class="title">浴室</view>
+  <view class="content">{{datas.bathroom}}</view>
+</view>
+<view class="list">
+  <view class="title">食品饮料</view>
+  <view class="content">{{datas.food}}</view>
+</view>
+<view class="list">
+  <view class="title">媒体科技</view>
+  <view class="content">{{datas.media}}</view>
+</view>
+<view class="list">
+  <view class="title">室外景观</view>
+  <view class="content">{{datas.landscape}}</view>
+</view>
+<view class="list">
+  <view class="title">其它设施</view>
+  <view class="content">{{datas.facilities}}</view>
+</view>
+<view class="list">
+  <view class="title">预定须知</view>
+  <view class="content">{{datas.instructions}}</view>
+</view>
+<view class="list" style="margin-bottom:190rpx">
+  <view class="title">取消规则</view>
+  <view class="content">{{datas.cancel_rules}}</view>
+</view>
+<view class="footer">
+  <view class="button" bindtap="goYuding">马上预定</view>
+</view>

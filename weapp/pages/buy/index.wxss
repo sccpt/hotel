@@ -1,0 +1,94 @@
+page {
+  background: #f1f1f2;
+}
+
+.list {
+  margin: 30rpx;
+  background: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.list .title {
+  padding-top: 20rpx;
+  font-size: 34rpx;
+}
+
+.list .row {
+  width: 100%;
+  font-size: 32rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+}
+
+.list .row .time {
+  flex: 1;
+}
+
+.list .cancel {
+  font-size: 32rpx;
+  color: #c08832;
+}
+
+.list .content {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 20rpx;
+  line-height: 36rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.list .subTit {
+  font-size: 32rpx;
+}
+
+.footer {
+  width: 100%;
+  height: 100rpx;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 66;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.footer .price {
+  margin-left: 42rpx;
+  font-size: 42rpx;
+  color: #cb1b1b;
+  flex: 1;
+}
+
+.footer .price .unt {
+  font-size: 32rpx;
+}
+
+.footer .details {
+  font-size: 32rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  margin-right: 38rpx;
+}
+
+.footer .button {
+  width: 300rpx;
+  height: 100rpx;
+  font-size: 36rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(to right, #cea462, #dbbb7e);
+}
+
+.sorry {
+  color: #999;
+  font-size: 26rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}

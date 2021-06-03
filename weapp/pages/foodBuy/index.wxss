@@ -1,0 +1,130 @@
+page {
+  background: #f1f1f1;
+}
+
+.top {
+  width: 100%;
+  height: 140rpx;
+  background: #d5b075;
+  z-index: 1;
+}
+
+.warp {
+  margin: -90rpx 30rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  z-index: 2;
+}
+
+.warp .title {
+  height: 100rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.warp .title .yellow {
+  color: #d5b075;
+}
+
+.rows {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36rpx;
+}
+
+.rows .pic {
+  width: 100rpx;
+  height: 100rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.rows .text {
+  flex: 1;
+  margin-left: 22rpx;
+  font-size: 30rpx;
+}
+
+.rows .num {
+  font-size: 30rpx;
+  margin-right: 40rpx;
+}
+
+.rows .pirce {
+  font-size: 30rpx;
+}
+
+.total {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 20rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: right;
+}
+
+.form {
+  margin: 120rpx 30rpx 130rpx 30rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx;
+}
+
+.order {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding-bottom: 30rpx;
+  padding-top: 30rpx;
+  overflow: hidden;
+  display: flex;
+  font-size: 30rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.order .text {
+  flex: 1;
+  margin-right: 10rpx;
+}
+
+.order .time {
+  margin-right: 20rpx;
+}
+
+.footer {
+  width: 100%;
+  height: 100rpx;
+  overflow: hidden;
+  position: fixed;
+  background: #fff;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  border-top: #d5b075 4rpx solid;
+  display: flex;
+  align-items: center;
+}
+
+.footer .total_price {
+  flex: 1;
+  margin-left: 66rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #d5b075;
+}
+
+.footer .buy {
+  width: 320rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #fff;
+  background: #d5b075;
+}

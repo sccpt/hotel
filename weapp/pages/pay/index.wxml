@@ -1,0 +1,30 @@
+<view class="list">
+  <view class="title">{{datas.roomName}}</view>
+  <van-divider />
+  <view class="row">
+    <view class="time">{{datas.start_time}} 至 {{datas.end_time}}</view>
+    <text>共{{datas.days}}晚</text>
+  </view>
+  <view class="pay">
+    房间数量：{{roomNum}} 间
+  </view>
+  <view class="pay">
+    待支付：
+    <text class="un">¥</text>
+    <text class="price">{{datas.price}}</text>
+  </view>
+</view>
+<view class="list">
+  <view class="subTit">预定须知</view>
+  <van-divider />
+  <view class="content">{{datas.instructions}}</view>
+</view>
+<view class="list" style="margin-bottom: 190rpx;">
+  <view class="subTit">取消规则</view>
+  <van-divider />
+  <view class="content">{{datas.cancel_rules}}</view>
+</view>
+<view class="footer">
+  <view class="button" bindtap="onPay">立即支付</view>
+</view>
+<van-dialog id="van-dialog" />

@@ -1,0 +1,40 @@
+{% extends "./page.html" %}
+{% block content %}
+{% include "./public/banner.html" %}
+<div class="uk-padding vert uk-padding-remove-horizontal">
+    <div class="uk-container">
+        <div data-uk-grid>
+            <div class="uk-width-1-1 uk-margin-medium-top">
+                <!-- slider -->
+                <div class="impx-room-slider">
+                    <div class="uk-position-relative" data-uk-slideshow="animation: fade">
+                        <ul class="uk-slideshow-items">
+                            {% for rowsItem in photos %}
+                            <li><img src="{{rowsItem}}" alt="" data-uk-cover>
+                                <div class="impx-overlay"></div>
+                            </li>
+                            {% endfor %}
+                        </ul><!-- slider thumb nav -->
+                        <div class="uk-position-center-left uk-position-medium">
+                            <ul class="uk-thumbnav uk-thumbnav-vertical">
+                                {% for rowsItem in photos %}
+                                <li data-uk-slideshow-item="0"><a href="#"><img src="{{rowsItem}}" width="120"
+                                            alt=""></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div><!-- slider thumb nav end -->
+                    </div>
+                </div><!-- slider end -->
+            </div><!-- MAIN CONTENT -->
+            <div class="uk-width-2-3@xl uk-width-2-3@l uk-width-2-3@m uk-width-1-1@s">
+                <!-- room description -->
+                <h4>{{title}}</h4>
+                <div data-uk-grid>
+                    {{content | safe}}
+                </div>
+            </div><!-- MAIN CONTENT -->
+            <!-- SIDEBAR -->
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% if typeName == 'news' %}
+<div class="impx-page-heading uk-position-relative blog">
+    {% elif typeName == 'photo' %}
+    <div class="impx-page-heading uk-position-relative gallery">
+        {% elif typeName == 'food' %}
+        <div class="impx-page-heading uk-position-relative room-detail">
+            {% elif typeName == 'room' %}
+            <div class="impx-page-heading uk-position-relative rooms">
+                {% else %}
+                <div class="impx-page-heading uk-position-relative about">
+                    {% endif %}
+
+                    <div class="impx-overlay dark"></div>
+                    <div class="uk-container">
+                        <div class="uk-width-1-1">
+                            <div class="uk-flex uk-flex-left">
+                                <div class="uk-light uk-position-relative uk-text-left page-title">
+                                    {% if typeName == 'news' %}
+                                    <h1 class="uk-margin-remove">促销动态</h1><!-- page title -->
+                                    <p class="impx-text-large uk-margin-remove">促销信息、酒店动态、景区动态等</p>
+                                    <!-- page subtitle -->
+                                    {% elif typeName == 'photo' %}
+                                    <h1 class="uk-margin-remove">照片图库</h1><!-- page title -->
+                                    <p class="impx-text-large uk-margin-remove">房间照片、景区照片等美图欣赏</p><!-- page subtitle -->
+                                    {% elif typeName == 'food' %}
+                                    <h1 class="uk-margin-remove">美食商品</h1><!-- page title -->
+                                    <p class="impx-text-large uk-margin-remove">酒店美食、本地土特产等商品信息</p>
+                                    <!-- page subtitle -->
+                                    {% elif typeName == 'room' %}
+                                    <h1 class="uk-margin-remove">房型列表</h1><!-- page title -->
+                                    <p class="impx-text-large uk-margin-remove">酒店房型信息</p>
+                                    <!-- page subtitle -->
+                                    {% else %}
+                                    <h1 class="uk-margin-remove">酒店信息</h1><!-- page title -->
+                                    <p class="impx-text-large uk-margin-remove">关于酒店的一些信息</p><!-- page subtitle -->
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

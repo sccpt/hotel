@@ -1,0 +1,39 @@
+<block wx:if="{{datas.status == 0}}">
+  <view class="header">已订餐</view>
+</block>
+<block wx:elif="{{datas.status == 1}}">
+  <view class="header">备餐中</view>
+</block>
+<block wx:elif="{{datas.status == 2}}">
+  <view class="header">已完成</view>
+</block>
+<block wx:else>
+  <view class="header">取消订单</view>
+</block>
+<view class="info">
+  <view class="row">
+    <view class="price">
+      订单总金额：
+      <text class="un">¥</text>
+      <text class="text">{{datas.price}}</text>
+    </view>
+  </view>
+  <view class="button" bindtap="goHome">再次订餐</view>
+</view>
+<view class="list">
+  <van-cell title="订单编号：" value="{{datas.order_id}}" />
+  <van-cell title="用餐时间：" value="{{datas.eat_time}}" />
+</view>
+<view class="warp">
+  <view class="title">
+    <text class="yellow">餐品 . </text>详情
+  </view>
+  <view class="rows" wx:for="{{foods}}" wx:key="*this">
+    <view class="pic">
+      <van-image src="{{domain + item.photo}}" width="100rpx" height="100rpx" fit="fill" />
+    </view>
+    <view class="text">{{item.title}}</view>
+    <view class="num">* {{item.num}}</view>
+    <view class="price">¥{{item.price}}</view>
+  </view>
+</view>

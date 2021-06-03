@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-divider": "../../vant-weapp/dist/divider/index",
+    "tabbar": "../components/tabbar"
+  }
+}

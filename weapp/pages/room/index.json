@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-dialog": "../../vant-weapp/dist/dialog/index"
+  },
+  "navigationBarTitleText": "房间预定"
+}

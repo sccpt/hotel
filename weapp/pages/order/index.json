@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订房订单",
+  "usingComponents": {
+    "van-tab": "../../vant-weapp/dist/tab/index",
+    "van-tabs": "../../vant-weapp/dist/tabs/index",
+    "van-count-down": "../../vant-weapp/dist/count-down/index",
+    "van-dialog": "../../vant-weapp/dist/dialog/index"
+  }
+}

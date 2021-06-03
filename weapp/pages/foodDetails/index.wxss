@@ -1,0 +1,163 @@
+page {
+  background: #f1f1f2;
+}
+
+.banner {
+  width: 100%;
+  height: 380rpx;
+  position: relative;
+}
+
+.swiper {
+  width: 100%;
+  height: 380rpx;
+}
+
+.picNum {
+  width: 110rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  right: 30rpx;
+  bottom: 10rpx;
+  z-index: 66;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.info {
+  background: #fff;
+  padding: 20rpx;
+}
+
+.info .title {
+  padding-top: 20rpx;
+  font-size: 38rpx;
+}
+
+.info .text {
+  width: 100%;
+  font-size: 30rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+  color: #d5b075;
+}
+
+.info .price {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #ee0a24;
+  margin-top: 30rpx;
+}
+
+.info .price .unt {
+  font-size: 24rpx;
+  font-weight: normal;
+}
+
+.info .content {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+
+.info .item {
+  width: 33.3%;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 32rpx;
+  float: left;
+}
+
+.list {
+  padding: 20rpx;
+  background: #fff;
+  margin-top: 30rpx;
+}
+
+.list .title {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: #f1f1f2 1px solid;
+  font-size: 32rpx;
+}
+
+.list .content {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 30rpx;
+  font-size: 30rpx;
+  line-height: 200%;
+}
+
+.footer {
+  width: 100%;
+  height: 130rpx;
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  padding-top: 30rpx;
+  left: 0;
+  bottom: 0;
+  z-index: 66;
+}
+
+.footer .button {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 38rpx;
+  background: linear-gradient(to right, #cfa561, #dbbb7e);
+}
+
+.eva {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+}
+
+.eva .tit {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.eva .name {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.eva .good {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eva .good .text,
+.eva .good .gray {
+  font-size: 30rpx;
+  color: #d5b075;
+}
+
+.eva .good .gray {
+  color: #999;
+}
+
+.eva .cont {
+  width: 100%;
+  overflow: hidden;
+  font-size: 30rpx;
+  line-height: 200%;
+  padding-top: 20rpx;
+}

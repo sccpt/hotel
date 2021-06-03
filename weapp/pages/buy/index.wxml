@@ -1,0 +1,51 @@
+<view class="list">
+  <view class="title">{{datas.room.name}}</view>
+  <van-divider />
+  <view class="row">
+    <view class="time">{{startTime}} — {{endTime}}</view>
+    <text>共{{totalTime}}晚</text>
+  </view>
+  <!-- <view class="row cancel">2020年05月05日 18:00 前可免费取消</view> -->
+</view>
+<view class="list">
+  <view class="subTit">入住信息</view>
+  <view style="padding-top:30rpx">
+    <van-cell-group>
+      <!-- <view class="sorry">由于系统原因，暂时只能一次预定一间房，如需预定多间，请提交多个订单。给您带来的不便，请谅解！</view> -->
+      <van-cell title="房间数量">
+        <van-stepper value="{{ roomNum }}" min="1" max="10" bind:change="onChangeRoom" />
+      </van-cell>
+      <van-field label='入住人' value="{{ people }}" placeholder="入住人姓名" border="{{ false }}"
+        bind:change="onChangePeople" />
+      <van-field label='联系电话' value="{{ people_mobile }}" maxlength="{{11}}" type="number" placeholder="联系电话"
+        border="{{ false }}" bind:change="onChangeTel" />
+      <van-field label='备注' type="textarea" autosize value="{{ content }}" placeholder="备注" border="{{ false }}"
+        bind:change="onChangeInfo" />
+    </van-cell-group>
+  </view>
+</view>
+<view class="list" style="margin-bottom:130rpx">
+  <view class="subTit">取消规则</view>
+  <van-divider />
+  <div class="content">{{datas.room.cancel_rules}}</div>
+</view>
+<view class="footer">
+  <view class="price">
+    <text class="unt">¥</text> {{totalPrice}}
+  </view>
+  <view class="details" bindtap="showPopup">
+    明细
+    <van-icon name="arrow-down" />
+  </view>
+  <view class="button" bindtap="goPay">提交订单</view>
+</view>
+<van-popup show="{{ show }}" closeable position="bottom" bind:close="onClose">
+  <view style="padding-top:20rpx">
+    <van-cell-group title="费用明细">
+      <block wx:for="{{datas.price}}" wx:key="*this">
+        <van-cell title="{{item.time}}" value="¥{{item.price}}" />
+      </block>
+      <van-cell title="房间数量" value="{{roomNum}}间" />
+    </van-cell-group>
+  </view>
+</van-popup>

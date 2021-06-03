@@ -1,0 +1,65 @@
+{
+  "name": "hotel-manage",
+  "version": "1.0.0",
+  "description": "酒店管理系统",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "@umijs/fabric": "^2.5.7",
+    "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
+    "egg": "^2.15.1",
+    "egg-bcrypt": "^1.1.0",
+    "egg-cors": "^2.2.3",
+    "egg-redis": "^2.4.0",
+    "egg-scripts": "^2.11.0",
+    "egg-sequelize": "^6.0.0",
+    "egg-socket.io": "^4.1.6",
+    "egg-validate-plus": "^1.1.6",
+    "egg-view-nunjucks": "^2.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "md5": "^2.3.0",
+    "moment": "^2.29.1",
+    "mysql2": "^2.2.5",
+    "svg-captcha": "^1.4.0",
+    "uuid": "^3.3.3",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0",
+    "sequelize-cli": "^6.2.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-cms-api --sticky",
+    "stop": "egg-scripts stop --title=egg-server-cms-api",
+    "dev": "egg-bin dev --sticky",
+    "debug": "egg-bin debug --sticky",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "宇瑞",
+  "license": "MIT"
+}

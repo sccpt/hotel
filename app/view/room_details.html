@@ -1,0 +1,210 @@
+{% extends "./page.html" %}
+{% block content %}
+{% include "./public/banner.html" %}
+<div class="uk-padding vert uk-padding-remove-horizontal">
+    <div class="uk-container">
+        <div data-uk-grid>
+            <div class="uk-width-1-1 uk-margin-medium-top">
+                <!-- slider -->
+                <div class="impx-room-slider">
+                    <div class="uk-position-relative" data-uk-slideshow="animation: fade">
+                        <ul class="uk-slideshow-items">
+                            {% for rowsItem in photos %}
+                            <li><img src="{{rowsItem}}" alt="" data-uk-cover>
+                                <div class="impx-overlay"></div>
+                            </li>
+                            {% endfor %}
+                        </ul><!-- slider thumb nav -->
+                        <div class="uk-position-center-left uk-position-medium">
+                            <ul class="uk-thumbnav uk-thumbnav-vertical">
+                                {% for rowsItem in photos %}
+                                <li data-uk-slideshow-item="{{loop.index0}}"><a href="#"><img src="{{rowsItem}}"
+                                            width="120" alt=""></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div><!-- slider thumb nav end -->
+                    </div>
+                </div><!-- slider end -->
+            </div><!-- MAIN CONTENT -->
+            <div class="uk-width-2-3@xl uk-width-2-3@l uk-width-2-3@m uk-width-1-1@s">
+                <!-- highlight -->
+                <ul class="uk-child-width-1-3@xl uk-child-width-1-3@l uk-child-width-1-2@m uk-child-width-1-2@s uk-grid-medium uk-grid-match"
+                    data-uk-grid>
+                    {% if area %}
+                    <li class="uk-text-center">
+                        <div class="uk-card uk-card-default uk-card-body impx-padding-medium">
+                            <!-- highlight item #1 --><i class="fa fa-home fa-2x impx-text-aqua"></i>
+                            <h6 class="uk-margin-remove-bottom uk-margin-small-top">房间面积</h6>
+                            <p class="uk-margin-remove-bottom uk-margin-small-top">{{area}}平米</p>
+                        </div>
+                    </li><!-- highlight item #1 end -->
+                    {% endif %}
+
+                    {% if window %}
+                    <li class="uk-text-center">
+                        <div class="uk-card uk-card-default uk-card-body impx-padding-medium">
+                            <!-- highlight item #1 --><i class="fa fa-clone fa-2x impx-text-aqua"></i>
+                            <h6 class="uk-margin-remove-bottom uk-margin-small-top">窗户</h6>
+                            <p class="uk-margin-remove-bottom uk-margin-small-top">超大落地窗</p>
+                        </div>
+                    </li><!-- highlight item #1 end -->
+                    {% endif %}
+
+                    {% if wifi %}
+                    <li class="uk-text-center">
+                        <div class="uk-card uk-card-default uk-card-body impx-padding-medium">
+                            <!-- highlight item #1 --><i class="fa fa-wifi fa-2x impx-text-aqua"></i>
+                            <h6 class="uk-margin-remove-bottom uk-margin-small-top">免费wifi</h6>
+                            <p class="uk-margin-remove-bottom uk-margin-small-top">{{wifi}}</p>
+                        </div>
+                    </li><!-- highlight item #1 end -->
+                    {% endif %}
+
+                    {% if floor %}
+                    <li class="uk-text-center">
+                        <div class="uk-card uk-card-default uk-card-body impx-padding-medium">
+                            <!-- highlight item #1 --><i class="fa fa-university fa-2x impx-text-aqua"></i>
+                            <h6 class="uk-margin-remove-bottom uk-margin-small-top">楼层</h6>
+                            <p class="uk-margin-remove-bottom uk-margin-small-top">{{floor}}</p>
+                        </div>
+                    </li><!-- highlight item #1 end -->
+                    {% endif %}
+
+                    {% if people_num %}
+                    <li class="uk-text-center">
+                        <div class="uk-card uk-card-default uk-card-body impx-padding-medium">
+                            <!-- highlight item #1 --><i class="fa fa-users fa-2x impx-text-aqua"></i>
+                            <h6 class="uk-margin-remove-bottom uk-margin-small-top">可住几人</h6>
+                            <p class="uk-margin-remove-bottom uk-margin-small-top">{{people_num}}</p>
+                        </div>
+                    </li><!-- highlight item #1 end -->
+                    {% endif %}
+
+                    {% if smoking %}
+                    <li class="uk-text-center">
+                        <div class="uk-card uk-card-default uk-card-body impx-padding-medium">
+                            <!-- highlight item #1 --><i class="fa fa-fire fa-2x impx-text-aqua"></i>
+                            <h6 class="uk-margin-remove-bottom uk-margin-small-top">吸烟</h6>
+                            <p class="uk-margin-remove-bottom uk-margin-small-top">{{smoking}}</p>
+                        </div>
+                    </li><!-- highlight item #1 end -->
+                    {% endif %}
+
+                    {% if bed_type %}
+                    <li class="uk-text-center">
+                        <div class="uk-card uk-card-default uk-card-body impx-padding-medium">
+                            <!-- highlight item #1 --><i class="fa fa-bed fa-2x impx-text-aqua"></i>
+                            <h6 class="uk-margin-remove-bottom uk-margin-small-top">床型</h6>
+                            <p class="uk-margin-remove-bottom uk-margin-small-top">{{bed_type}}</p>
+                        </div>
+                    </li><!-- highlight item #1 end -->
+                    {% endif %}
+
+                    {% if meals %}
+                    <li class="uk-text-center">
+                        <div class="uk-card uk-card-default uk-card-body impx-padding-medium">
+                            <!-- highlight item #1 --><i class="fa fa-bitbucket fa-2x impx-text-aqua"></i>
+                            <h6 class="uk-margin-remove-bottom uk-margin-small-top">餐食</h6>
+                            <p class="uk-margin-remove-bottom uk-margin-small-top">{{meals}}</p>
+                        </div>
+                    </li><!-- highlight item #1 end -->
+                    {% endif %}
+
+                </ul><!-- highlight end -->
+                <!-- room description -->
+                <div data-uk-grid>
+                    {% if support %}
+                    <div class="uk-width-1-2@xl uk-width-1-2@l uk-width-1-2@m uk-width-1-2@s">
+                        <h5>便利设施</h5>
+                        <p>{{support}}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if bathroom %}
+                    <div class="uk-width-1-2@xl uk-width-1-2@l uk-width-1-2@m uk-width-1-2@s">
+                        <h5>浴室</h5>
+                        <p>{{bathroom}}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if food %}
+                    <div class="uk-width-1-2@xl uk-width-1-2@l uk-width-1-2@m uk-width-1-2@s">
+                        <h5>食品饮料</h5>
+                        <p>{{food}}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if media %}
+                    <div class="uk-width-1-2@xl uk-width-1-2@l uk-width-1-2@m uk-width-1-2@s">
+                        <h5>媒体科技</h5>
+                        <p>{{media}}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if landscape %}
+                    <div class="uk-width-1-2@xl uk-width-1-2@l uk-width-1-2@m uk-width-1-2@s">
+                        <h5>室外景观</h5>
+                        <p>{{landscape}}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if facilities %}
+                    <div class="uk-width-1-2@xl uk-width-1-2@l uk-width-1-2@m uk-width-1-2@s">
+                        <h5>其它设施</h5>
+                        <p>{{facilities}}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if instructions %}
+                    <div class="uk-width-1-2@xl uk-width-1-2@l uk-width-1-2@m uk-width-1-2@s">
+                        <h5>预定须知</h5>
+                        <p>{{instructions}}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if cancel_rules %}
+                    <div class="uk-width-1-2@xl uk-width-1-2@l uk-width-1-2@m uk-width-1-2@s">
+                        <h5>取消规则</h5>
+                        <p>{{cancel_rules}}</p>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div><!-- MAIN CONTENT -->
+            <!-- SIDEBAR -->
+            <div class="uk-width-1-3@xl uk-width-1-3@l uk-width-1-3@m uk-width-1-1@s">
+                <div
+                    class="uk-margin-large-bottom uk-padding impx-padding-medium bg-color-white uk-box-shadow-medium related-rooms">
+                    <h4 class="uk-heading-line uk-text-center">其它房型</h4><!-- title -->
+                    <!-- room items -->
+                    <ul class="uk-child-width-1-1@xl uk-child-width-1-1@l uk-child-width-1-1@m uk-child-width-1-3@s impx-rooms style3 uk-margin-small-top uk-margin-remove-bottom data-uk-grid"
+                        data-uk-grid>
+                        {% for roomItem in rooms %}
+                        <li>
+                            <!-- room item #1 --><a href="/room/details/{{roomItem.id}}.html"
+                                class="uk-inline-clip uk-transition-toggle">
+                                <div
+                                    class="uk-card uk-card-default uk-box-shadow-large uk-box-shadow-hover-xlarge impx-service-card other-item bg-color-aqua">
+                                    <div class="uk-card-media-top">
+                                        <div class="uk-position-relative"><img src="{{roomItem.photo}}" alt="">
+                                            <div class="impx-overlay light overlay-squared padding-xwide"></div>
+                                        </div>
+                                        <div
+                                            class="uk-card-body impx-padding-small uk-position-relative uk-position-z-index">
+                                            <h4 class="uk-card-title uk-margin-remove-bottom impx-text-white">
+                                                {{roomItem.name}}</h4>
+                                            <div class="uk-card-badge uk-label bg-color-gold impx-text-white small">价格：
+                                                {{roomItem.price}}元/晚</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li><!-- room item #1 end -->
+                        {% endfor %}
+                    </ul><!-- related rooms end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

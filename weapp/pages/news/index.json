@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tabbar":"../components/tabbar"
+  },
+  "navigationBarTitleText": "促销动态"
+}

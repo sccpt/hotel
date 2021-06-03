@@ -1,0 +1,138 @@
+page {
+  background: #f1f1f2;
+}
+
+.banner {
+  width: 100%;
+  height: 600rpx;
+  background: #fff;
+  z-index: 1;
+}
+
+.yuding {
+  width: calc(100% - 100rpx);
+  margin-top: -60rpx;
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 20rpx #e2e2e2;
+  z-index: 99;
+}
+
+.yuding .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yuding .time {
+  flex: 1;
+  text-align: center;
+  padding-top: 10rpx;
+}
+
+.yuding .date {
+  font-size: 38rpx;
+  font-weight: bold;
+}
+
+.yuding .week {
+  font-size: 32rpx;
+  color: #ccc;
+  margin-top: 20rpx;
+}
+
+.yuding .total {
+  width: 140px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  color: #ac5c01;
+  font-size: 34rpx;
+}
+
+.yuding .button {
+  width: 100%;
+  height: 92rpx;
+  border-radius: 10rpx;
+  background: #d9b778;
+  line-height: 92rpx;
+  text-align: center;
+  font-size: 38rpx;
+  color: #fff;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.list {
+  width: calc(100% - 60rpx);
+  margin-top: 30rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.list .pic {
+  width: 100%;
+  height: 355rpx;
+  position: relative;
+}
+
+.list .name {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 28rpx;
+  z-index: 66;
+  overflow: hidden;
+  color: #fff;
+  font-size: 38rpx;
+  text-indent: 20rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 0 0 10rpx #000;
+}
+
+.list .rows {
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list .left {
+  flex: 1;
+  font-size: 32rpx;
+}
+
+.list .content {
+  width: 100%;
+  display: flex;
+}
+
+.list .content .item {
+  margin-right: 20rpx;
+}
+
+.list .no_room {
+  margin-top: 10rpx;
+  color: #c89544;
+}
+
+.list .price {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #b00000;
+}
+
+.list .unit,
+.list .time {
+  font-size: 22rpx;
+  font-weight: normal;
+}
+
+.list .time {
+  color: #999;
+}

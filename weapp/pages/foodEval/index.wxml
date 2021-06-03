@@ -1,0 +1,27 @@
+<view class="header">评论中心</view>
+<view class="info">
+  <van-cell title="订单编号：" value="{{datas.order_id}}" />
+  <van-cell title="用餐时间：" value="{{datas.eat_time}}" />
+</view>
+<view class="warp" wx:for="{{foods}}" wx:key="*this">
+  <view class="rows">
+    <view class="pic">
+      <van-image src="{{domain + item.photo}}" width="100rpx" height="100rpx" fit="fill" />
+    </view>
+    <view class="text">{{item.title}}</view>
+    <view class="num">* {{item.num}}</view>
+    <view class="price">¥{{item.price}}</view>
+  </view>
+  <van-radio-group value="{{item.good}}" bind:change="onChangeRadio" data-index="{{index}}" direction="horizontal">
+    <van-radio name="1">好评</van-radio>
+    <van-radio name="0">差评</van-radio>
+  </van-radio-group>
+  <view class="eval">
+    <van-field value="{{ item.content }}" bind:change="onChangeInput" data-index="{{index}}" type="textarea"
+      placeholder="请输入内容" maxlength="{100}" autosize border="{{ false }}" />
+  </view>
+</view>
+<view class="blank"></view>
+<view class="footer">
+  <view class="button" bindtap="goSubmit">提交评论</view>
+</view>

@@ -1,0 +1,98 @@
+{% extends "./page.html" %}
+{% block content %}
+{% include "./public/banner.html" %}
+<div class="uk-padding  uk-padding-remove-horizontal">
+    <div class="uk-container">
+        <!-- ROOMS LIST -->
+        <div class="uk-position-relative uk-visible-toggle uk-margin-small-top">
+            <ul class="uk-child-width-1-2@xl uk-child-width-1-2@l uk-child-width-1-2@m uk-child-width-1-1@s data-uk-grid uk-grid-match uk-margin-large-bottom uk-grid"
+                data-uk-grid="">
+                {% for rowsItem in rows %}
+                {% if loop.index == 1 %}
+                <li class="uk-first-column">
+                    {% elif loop.index == 2 %}
+                <li>
+                    {% elif loop.index == 3 %}
+                <li class="uk-grid-margin uk-first-column">
+                    {% else %}
+                <li class="uk-grid-margin">
+                    {% endif %}
+                    <!-- room item #1 -->
+                    <div class="impx-room-item medium uk-box-shadow-large">
+                        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-grid"
+                            data-uk-grid="">
+                            <div class="uk-card-media-left uk-cover-container uk-position-relative uk-first-column">
+                                <canvas width="290" height="180"></canvas><img src="{{rowsItem.photo}}" alt=""
+                                    data-uk-cover="" class="uk-cover" style="width: 316px; height: 316px;">
+                            </div>
+                            <div class="uk-card-body uk-position-relative impx-padding-medium">
+                                <div class="uk-card-header uk-padding-remove-horizontal">
+                                    <h4 class="uk-card-title uk-margin-remove-bottom">{{rowsItem.name}}</h4>
+                                    <p class="uk-text-meta uk-margin-remove-top">房间面积：{{rowsItem.area}}平米</p>
+                                </div><span class="uk-card-badge uk-label bg-color-aqua">￥{{rowsItem.price}}/晚</span>
+                                <ul class="uk-list room-fac">
+                                    <li><span class="impx-text-aqua uk-icon" data-uk-icon="icon: check; ratio: 1;"><svg
+                                                width="20" height="20" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg" data-svg="check">
+                                                <polyline fill="none" stroke="#000" stroke-width="1.1"
+                                                    points="4,10 8,15 17,4"></polyline>
+                                            </svg></span>{{rowsItem.wifi}}</li>
+                                    <li><span class="impx-text-aqua uk-icon" data-uk-icon="icon: check; ratio: 1;"><svg
+                                                width="20" height="20" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg" data-svg="check">
+                                                <polyline fill="none" stroke="#000" stroke-width="1.1"
+                                                    points="4,10 8,15 17,4"></polyline>
+                                            </svg></span>{{rowsItem.bed_type}}</li>
+                                    <li><span class="impx-text-aqua uk-icon" data-uk-icon="icon: check; ratio: 1;"><svg
+                                                width="20" height="20" viewBox="0 0 20 20"
+                                                xmlns="http://www.w3.org/2000/svg" data-svg="check">
+                                                <polyline fill="none" stroke="#000" stroke-width="1.1"
+                                                    points="4,10 8,15 17,4"></polyline>
+                                            </svg></span>
+                                        {% if rowsItem.window %}
+                                        超大落地窗
+                                        {% else %}
+                                        无窗
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                                <div class="uk-card-footer uk-padding-remove-horizontal uk-padding-remove-bottom"><a
+                                        href="/room/details/{{rowsItem.id}}.html"
+                                        class="uk-button uk-button-text impx-text-aqua">查看详情 »</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </li><!-- room item #1 end -->
+                {% endfor %}
+            </ul><!-- rooms items end -->
+        </div>
+        <!-- blog paging -->
+        <ul class="uk-pagination uk-flex-center impx-pagination" data-uk-margin="">
+            {% for pageItem in pages %}
+            {% if loop.first %}
+            <li class="uk-first-column">
+                <a href="{{pageItem.url}}"><span data-uk-pagination-previous=""
+                        class="uk-pagination-previous uk-icon"><svg width="7" height="12" viewBox="0 0 7 12"
+                            xmlns="http://www.w3.org/2000/svg" data-svg="pagination-previous">
+                            <polyline fill="none" stroke="#000" stroke-width="1.2" points="6 1 1 6 6 11">
+                            </polyline>
+                        </svg></span></a>
+            </li>
+            {% elif loop.last %}
+            <li><a href="{{pageItem.url}}"><span data-uk-pagination-next="" class="uk-pagination-next uk-icon"><svg
+                            width="7" height="12" viewBox="0 0 7 12" xmlns="http://www.w3.org/2000/svg"
+                            data-svg="pagination-next">
+                            <polyline fill="none" stroke="#000" stroke-width="1.2" points="1 1 6 6 1 11">
+                            </polyline>
+                        </svg></span></a></li>
+
+            {% elif pageItem.active %}
+            <li class="uk-active"><span>{{pageItem.num}}</span></li>
+            {% else %}
+            <li><a href="{{pageItem.url}}">{{pageItem.num}}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul><!-- blog paging end -->
+    </div>
+</div>
+{% endblock %}

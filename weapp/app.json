@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/room/index",
+    "pages/roomDetails/index",
+    "pages/news/index",
+    "pages/newsDetails/index",
+    "pages/about/index",
+    "pages/my/index",
+    "pages/order/index",
+    "pages/orderDetails/index",
+    "pages/buy/index",
+    "pages/pay/index",
+    "pages/food/index",
+    "pages/foodBuy/index",
+    "pages/success/index",
+    "pages/foodDetails/index",
+    "pages/foodOrder/index",
+    "pages/foodOrderDetails/index",
+    "pages/foodEval/index",
+    "pages/foodMyEval/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "酒店管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-tabbar": "./vant-weapp/dist/tabbar/index",
+    "van-tabbar-item": "./vant-weapp/dist/tabbar-item/index",
+    "van-image": "./vant-weapp/dist/image/index",
+    "van-calendar": "./vant-weapp/dist/calendar/index",
+    "van-empty": "./vant-weapp/dist/empty/index",
+    "van-icon": "./vant-weapp/dist/icon/index",
+    "van-loading": "./vant-weapp/dist/loading/index"
+  },
+  "enablePullDownRefresh": false,
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

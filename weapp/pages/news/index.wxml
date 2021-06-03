@@ -1,0 +1,35 @@
+<view class="warp">
+  <block wx:for="{{listdata}}" wx:key="*this">
+    <block wx:if="{{index == 0}}">
+      <view class="top" bindtap="goDetails" id="{{item.id}}">
+        <view class="pic">
+          <van-image src="{{domain + item.photo}}" width="100%" height="300rpx" fit="fill" />
+        </view>
+        <view class="title">{{item.title}}</view>
+        <view class="time">{{item.createdAt}}</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="list" bindtap="goDetails" id="{{item.id}}">
+        <view class="left">
+          <view class="title">{{item.title}}</view>
+          <view class="time">{{item.createdAt}}</view>
+        </view>
+        <view class="pic">
+          <van-image src="{{domain + item.photo}}" width="100%" height="120rpx" fit="fill" />
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:if="{{hasMore}}">
+    <view class="loading">
+      <van-loading size="24px" vertical>加载中...</van-loading>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="loading">
+      没有更多数据了
+    </view>
+  </block>
+</view>
+<tabbar active="1" />

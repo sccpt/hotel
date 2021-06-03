@@ -1,0 +1,51 @@
+<view class="container">
+  <swiper autoplay="{{autoplay}}" class="banner">
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item>
+        <van-image src="{{domain + item.photo}}" width="100%" height="600rpx" fit="fill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="yuding">
+    <view class="row">
+      <view class="time">
+        <view class="date" bindtap="onDisplay">{{startTime}}</view>
+        <view class="week" bindtap="onDisplay">{{startWeek}}</view>
+      </view>
+      <view class="total">{{totalTime}}晚 </view>
+      <view class="time">
+        <view class="date" bindtap="onDisplay">{{endTime}}</view>
+        <view class="week" bindtap="onDisplay">{{endWeek}}</view>
+      </view>
+    </view>
+    <view class="button" bindtap="goYuding">立即预定</view>
+  </view>
+  <block wx:for="{{rooms}}" wx:key="*this">
+    <view class="list" bindtap="goRoomDetails" id="{{item.id}}">
+      <view class="pic">
+        <van-image src="{{domain + item.photo}}" width="100%" height="355rpx" fit="fill" />
+        <view class="name">{{item.name}}</view>
+      </view>
+      <view class="rows">
+        <view class="left">
+          <view class="content">
+            <view class="item">{{item.area}}m²</view>
+            <block wx:if="{{item.window == 1}}">
+              <view class="item">有窗</view>
+            </block>
+            <block wx:else>
+              <view class="item">无窗</view>
+            </block>
+            <view class="item">{{item.bed_type}}</view>
+          </view>
+          <view class="no_room">房源紧张</view>
+        </view>
+        <view class="price">
+          <text class="unit">¥</text> {{item.price}} <text class="time">起</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<tabbar active="0" />
+<van-calendar show="{{ show }}" max-range="{{30}}" type="range" bind:close="onClose" bind:confirm="onConfirm" />

@@ -1,0 +1,22 @@
+<!-- Popular Posts Widget -->
+<div class="impx-sidebar uk-margin-large-bottom">
+    <h4 class="uk-heading-line uk-heading-bullet"><span>房间推荐</span></h4>
+    <ul class="impx-popular-news uk-list uk-list-divider uk-list-large">
+        {% for roomItem in rooms %}
+        <li>
+            <div class="uk-grid-small uk-grid" data-uk-grid="">
+                <div class="uk-width-1-3@xl uk-width-1-3@l uk-width-1-3@m uk-width-1-6@s uk-first-column">
+                    <div class="impx-popular-thumb"><img src="{{roomItem.photo}}" alt="Popular Thumbnail"></div>
+                </div>
+                <div class="uk-width-2-3@xl uk-width-2-3@l uk-width-2-3@m uk-width-5-6@s">
+                    <h6 class="uk-margin-small-bottom"><a href="/room/details/{{roomItem.id}}.html"
+                            class="uk-link-reset">{{roomItem.name}}</a></h6>
+                    <ul class="impx-post-meta">
+                        <li>价格： {{roomItem.price}}元/晚</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div><!-- Popular Posts Widget End -->
