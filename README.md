@@ -21,7 +21,7 @@
 
 后端技术栈：egg.js + mysql + sequelize + jwt + redis + socket.io 等
 
-前端技术栈：React + Ant Design Pro + Umi 等。由于前端部分代码用到了公司内部框架，暂不提供开源！
+前端技术栈：React + Ant Design Pro + Umi 等。前端源码，暂不提供开源！
 
 网站：bootstrap 响应式
 
