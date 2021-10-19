@@ -42,8 +42,8 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-cms-api --sticky",
-    "stop": "egg-scripts stop --title=egg-server-cms-api",
+    "start": "egg-scripts start --daemon --title=hotel --ignore-stderr",
+    "stop": "egg-scripts stop --title=hotel",
     "dev": "egg-bin dev --sticky",
     "debug": "egg-bin debug --sticky",
     "test": "npm run lint -- --fix && npm run test-local",
