@@ -15,6 +15,15 @@
 
 </div>
 
+## 演示网站
+
+前台网站：http://211.149.215.153:8001/
+
+后台登录：http://211.149.215.153:8001/admin/index.html
+
+账户：admin  密码：123456
+
+备注：服务器即将到期，如果您访问不了了就代表服务器已经到期！
 
 
 ## 技术栈
@@ -38,7 +47,8 @@ Redis
 ## 使用
 
 ```bash
-git clone https://github.com/sccpt/hotel.git
+git clone https://gitee.com/scyurui/hotel.git
+// 或者 git clone https://github.com/sccpt/hotel.git
 cd hotel
 npm install
 ```
